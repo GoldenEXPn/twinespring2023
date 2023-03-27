@@ -27,12 +27,26 @@ body, tw-story{
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">var audio = document.createElement('audio');
 audio.src='https://goldenexpn.github.io/twinespring2023/twine/music.mp3';
 audio.loop=true;
-audio.play();</script><tw-tag name="start-up" color="none"></tw-tag><tw-tag name="Header" color="none"></tw-tag><tw-passagedata pid="1" name="begin" tags="Header" position="525,400" size="100,100">The Trolley Game
+audio.play();
+
+var button = document.createElement('Button');
+button.innerHTML = 'Pause Music';
+
+button.onclick = function() {
+  if (audio.paused) {
+    audio.play();
+    button.innerHTML = 'Pause Music';
+  } else {
+    audio.pause();
+    button.innerHTML = 'Play Music';
+  }
+};
+
+document.body.appendChild(button);</script><tw-tag name="start-up" color="none"></tw-tag><tw-tag name="Header" color="none"></tw-tag><tw-passagedata pid="1" name="begin" tags="Header" position="525,400" size="100,100">The Trolley Game
 	But In Boats!
     [[Press-&gt;name]] to continue
     
 
-&lt;button id=&quot;play-pause-button&quot; onclick=&quot;togglePlayPause()&quot;&gt;Pause Music&lt;/button&gt;
 </tw-passagedata><tw-passagedata pid="2" name="name" tags="" position="675,400" size="100,100">(put: (prompt: &quot;Come up with a name to be the savior&quot;,&quot;Fantastic Name&quot;) into $name)
 
 Hello $name, welcome abroad!
