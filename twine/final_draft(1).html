@@ -61,8 +61,8 @@ Total Survival: $number</tw-passagedata><tw-passagedata pid="4" name="startup" t
 (set: $decision to &quot;&quot;)
 
 (set:$clock to (random:1,24))</tw-passagedata><tw-passagedata pid="5" name="2 boats" tags="" position="975,400" size="100,100">[[&lt;img src=&quot;https://goldenexpn.github.io/twinespring2023/images/boat1.jpg&quot; width=&quot;100%&quot;&gt;-&gt;playerlocation]]
-So... That&#39;s all we have left: $number survivors on two boats. 
-Larger boat contains $boat1 people, and smaller boat contains $boat2 people.
+So... That&#39;s all we have left: &lt;span style = &quot;color: #85C4F9&quot;&gt;$number&lt;/span&gt; survivors on two boats. 
+Larger boat contains &lt;span style = &quot;color: #85C4F9&quot;&gt;$boat1&lt;/span&gt; people, and smaller boat contains &lt;span style = &quot;color: #85C4F9&quot;&gt;$boat2&lt;/span&gt; people.
 You are located [[here-&gt;playerlocation]]</tw-passagedata><tw-passagedata pid="6" name="playerlocation" tags="" position="1125,400" size="100,100">[[&lt;img src = &quot;https://goldenexpn.github.io/twinespring2023/images/boatLocation.jpg&quot;width=100%&gt;-&gt;night1]]
 
 You&#39;re right here... 
@@ -136,12 +136,12 @@ A giant hole is found underneath the boat and it is going to sink.
 Luckily, you fixed the [[two lifeboats-&gt;2lifeboats]]!</tw-passagedata><tw-passagedata pid="12" name="2lifeboats" tags="" position="975,575" size="100,100">(set:$lifeboat1 to ($number-100))
 (set:$lifeboat2 to ($number-$lifeboat1))
 &lt;img src = &quot;https://goldenexpn.github.io/twinespring2023/images/2shelters.jpg&quot;; width = &quot;100%&quot;&gt;
-the large lifeboat has $lifeboat1 people, and the small boat has $lifeboat2 people.
+the large lifeboat has &lt;span style = &quot;color: #85C4F9&quot;&gt;$lifeboat1&lt;/span&gt; people, and the small boat has &lt;span style = &quot;color: #85C4F9&quot;&gt;$lifeboat2&lt;/span&gt; people.
 (if: $decision is &quot;large&quot;)[
-	hopefully there&#39;s [[time-&gt;event3]] to morn for the loss of $boat2 people.
+	hopefully there&#39;s [[time-&gt;event3]] to morn for the loss of &lt;span style = &quot;color: #85C4F9&quot;&gt;$boat2&lt;/span&gt; people.
 ]
 (else:)[
-	hopefully there&#39;s [[time-&gt;event3]] to morn for the loss of $boat1 people.
+	hopefully there&#39;s [[time-&gt;event3]] to morn for the loss of &lt;span style = &quot;color” #85C4F9&quot;&gt;$boat1&lt;/span&gt; people.
 ]</tw-passagedata><tw-passagedata pid="13" name="event3" tags="" position="1125,575" size="100,100">&lt;img src = &quot;https://goldenexpn.github.io/twinespring2023/images/sheltersProblem.jpg&quot;; width = &quot;100%&quot;&gt;
 At $clock:00, two holes mysteriously appear at the belly of two boats. You can only repair one before they sink. 
 I hate to do &lt;span style = &quot;color: red&quot;&gt;this&lt;/span&gt;:
@@ -169,7 +169,7 @@ $name, You have to fix &lt;span style=&quot;color:red; font-size:30px&quot;&gt;M
 (if:$decision is &quot;small&quot;)[
     Man: You did the right things.
     ...$name, make sure no accident will happen [[again-&gt;1lifeboat]]
-]</tw-passagedata><tw-passagedata pid="15" name="1lifeboat" tags="" position="800,875" size="100,100">(if: $decision is &quot;large&quot;)[
+]</tw-passagedata><tw-passagedata pid="15" name="1lifeboat" tags="" position="825,875" size="100,100">(if: $decision is &quot;large&quot;)[
 	&lt;img src = &quot;https://goldenexpn.github.io/twinespring2023/images/largeShelterLeft.jpg&quot;; width = &quot;100%&quot;&gt;
     Only 1 lifeboat remains... Hopefully, this is the [[last-&gt;dark]] sacrifice to make...
     Total Survivor: $lifeboat1
@@ -196,7 +196,7 @@ window.togglePlayPause = function() {
     button.innerHTML = &quot;Play Music&quot;;
   }
 };
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="20" name="blood1" tags="" position="675,725" size="100,100">[[&lt;img src = &quot;https://goldenexpn.github.io/twinespring2023/images/blood_girl.gif&quot;; width=&quot;100%&quot;&gt;-&gt;1boat]]
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="20" name="blood1" tags="" position="650,725" size="100,100">[[&lt;img src = &quot;https://goldenexpn.github.io/twinespring2023/images/blood_girl.gif&quot;; width=&quot;100%&quot;&gt;-&gt;1boat]]
 </tw-passagedata><tw-passagedata pid="21" name="blood2" tags="" position="425,925" size="100,100">[[&lt;img src = &quot;https://goldenexpn.github.io/twinespring2023/images/blood.gif&quot;; width = &quot;100%&quot;&gt;-&gt;1lifeboat]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
