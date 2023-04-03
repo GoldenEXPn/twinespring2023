@@ -21,7 +21,29 @@ tw-story[tags~="night"]{
   font-size: 25px;
   color: white;
   background-color: black;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">var audio = document.createElement('audio');
+}
+
+.test tw-link{
+  background-color: transparent;
+  font-size: 80px;
+  font-weight: bold;
+  color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">var audio = document.createElement('audio');
 var button = document.createElement('Button');
 button.innerHTML = 'Pause Music';
 
@@ -37,6 +59,15 @@ button.onclick = function() {
   }
 };
 document.body.appendChild(button);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const clickableArea = document.getElementById("clickable-area");
+  clickableArea.addEventListener("click", () => {
+    Engine.play('blood1');
+  });
+});
+
 audio.play();</script><tw-tag name="start-up" color="none"></tw-tag><tw-tag name="Header" color="none"></tw-tag><tw-passagedata pid="1" name="begin" tags="Header" position="525,400" size="100,100">&lt;p&gt;
   &lt;span style = &quot;color: #F99281&quot;; font-size: 40px&gt;The Trolley Problem&lt;/span&gt;
 	&lt;span style = &quot;color: black&quot;&gt;But In Boats!
@@ -85,21 +116,19 @@ Which one would you choose:
 
 (if: $decision is &quot;large&quot;)[
 
-	&lt;div style=&quot;position:relative;&quot;&gt;
-  &lt;img src=&quot;https://goldenexpn.github.io/twinespring2023/images/shoulder.jpg&quot; width=&quot;100%&quot;&gt;
+&lt;div style=&quot;position:relative;&quot;&gt;
+  &lt;img src=&quot;https://goldenexpn.github.io/twinespring2023/images/shoulder.jpg&quot; width=&quot;100%&quot; id=&quot;clickable-area&quot;&gt;
   &lt;a href=&quot;#&quot; 
      style=&quot;position:absolute; 
             bottom:0; 
             right:0; 
-            width:50%; 
-            height:50%; 
+            width:40%; 
+            height:40%; 
             background-color:transparent;&quot;
-     onclick=&quot;
-       (goto: blood1)
-     &quot;
    &gt;&lt;/a&gt;
-	&lt;/div&gt;
+&lt;/div&gt;
     
+    &lt;span style = &quot;color: red&quot;&gt;$name&lt;/span&gt;, please don&#39;t leave me and my daughter alone. Fix &lt;span style = &quot;color:red&quot;&gt;OUR&lt;/span&gt; please!
   (link: &quot;change my mind&quot;)[
       (set: $decision to &quot;small&quot;)
       (go-to: &quot;shoulder&quot;)
@@ -180,9 +209,10 @@ $name, You have to fix &lt;span style=&quot;color:red; font-size:30px&quot;&gt;M
     Total Survivor: $lifeboat2
 ]
 </tw-passagedata><tw-passagedata pid="16" name="dark" tags="" position="825,725" size="100,100">&lt;img src = &quot;https://goldenexpn.github.io/twinespring2023/images/shelter_night.gif&quot;; width = &quot;100%&quot;&gt;
-I don&#39;t want to do this [[anymore-&gt;wakeup]].</tw-passagedata><tw-passagedata pid="17" name="wakeup" tags="" position="975,725" size="100,100">I wake up. It&#39;s just a dream? 
-walk [[outside-&gt;sea]] the room</tw-passagedata><tw-passagedata pid="18" name="sea" tags="" position="1125,725" size="100,100">&lt;img src = &quot;https://goldenexpn.github.io/twinespring2023/images/sea.jpg&quot;;width = &quot;100%&quot;&gt;
-&lt;span style = &quot;font-size: 50px&quot;&gt;The End&lt;/span&gt;</tw-passagedata><tw-passagedata pid="19" name="Header" tags="Header" position="575,250" size="100,100">&lt;audio id=&quot;music&quot; src=&quot;https://goldenexpn.github.io/twinespring2023/twine/music.mp3&quot; loop&gt;&lt;/audio&gt;
+I don&#39;t want to do this [[anymore-&gt;wakeup]].</tw-passagedata><tw-passagedata pid="17" name="wakeup" tags="" position="975,725" size="100,100">&lt;br&gt;&lt;/br&gt;
+I wake up. It&#39;s just a dream? 
+walk [[outside-&gt;sea]] the room</tw-passagedata><tw-passagedata pid="18" name="sea" tags="" position="1125,725" size="100,100">&lt;img src = &quot;https://goldenexpn.github.io/twinespring2023/images/sea.jpg&quot; width = &quot;100%&quot;&gt;
+&lt;div style = &quot;font-size: 50px; text-align: center;&quot;&gt;The End&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="Header" tags="Header" position="575,250" size="100,100">&lt;audio id=&quot;music&quot; src=&quot;https://goldenexpn.github.io/twinespring2023/twine/music.mp3&quot; loop&gt;&lt;/audio&gt;
 
 &lt;script&gt;
 window.togglePlayPause = function() {
